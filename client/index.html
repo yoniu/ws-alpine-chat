@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <div id="app" x-data="appData">
+    <div class="title">YY-WS-ALPINE-CHAT</div>
+    <div class="messages" x-ref="messages" x-init="$watch('$store.response.responses', () => $refs.messages.scroll({ top: $refs.messages.scrollHeight, left: 0, behavior: 'smooth' }))">
+      <template x-for="response in $store.response.responses">
+        <div class="message-item" :class="response.id == $store.response.myID ? 'Send' : 'Save'">
+          <div class="message-item-avatar"><img src="https://cravatar.cn/avatar/9fa5ce5c04e4327c7fdb0ff08139a640?s=&d=mm&r=g" width="48" height="48" /></div>
+          <div class="message-item-msg"><span x-text="response.msg"></span></div>
+        </div>
+      </template>
+    </div>
+    <div class="send">
+      <textarea x-model="text"></textarea>
+      <a class="button" href="javascript:;" @click="sendMessage()">发送</a>
+    </div>
+  </div>
+  <script src="./cdn.min.js" defer></script>
+  <script src="./app.js"></script>
+</body>
+</html>

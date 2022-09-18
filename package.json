@@ -1,0 +1,20 @@
+{
+  "name": "ws-alpine-chat",
+  "version": "1.0.0",
+  "description": "用 WebSocket 实现聊天室",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js --watch server.js"
+  },
+  "author": "yoniu",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^2.1.2",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  }
+}

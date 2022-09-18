@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 600px;
+  max-width: 90vw;
+  padding: 1rem;
+  background-color: #eee;
+}
+
+.title {
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  height: 450px;
+  max-height: 60vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.message-item {
+  display: flex;
+}
+.message-item-avatar, .message-item-msg {
+  flex-shrink: 1;
+}
+.message-item.Send .message-item-avatar {
+  order: 1;
+}
+.message-item.Send .message-item-msg {
+  order: 0;
+}
+.message-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.message-item-avatar img {
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0 0 0 / 10%);
+}
+.Save .message-item-msg {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  background-color: #eee;
+  padding: .5rem;
+  border-radius: 0 10px 10px 10px;
+}
+.Save {
+  align-items: flex-start;
+}
+.Send {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+.Send .message-item-msg {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: #12B7F5;
+  padding: .5rem;
+  border-radius: 10px 10px 0 10px;
+}
+
+.send {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.send textarea {
+  margin: .5rem 0;
+  width: -webkit-fill-available;
+  outline: none;
+  border: 1px solid #ddd;
+  resize: none;
+  height: 100px;
+}
+
+.send .button {
+  line-height: 1;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid #666;
+  background-color: transparent;
+  color: #666;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.send .button:hover, .send .button:focus {
+  background-color: #666;
+  color: #fff;
+}
